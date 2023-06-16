@@ -1,0 +1,32 @@
+#!/bin/bash
+
+start_service() {
+   sudo systemctl start v2raya
+}
+
+
+stop_service() {
+   sudo systemctl stop v2raya
+}
+
+restart_service() {
+   sudo systemctl restart v2raya
+}
+
+case "$1" in
+    -r)
+        start_service
+        ;;
+    -s)
+        stop_service
+        ;;
+    -re)
+        restart_service
+        ;;
+    *)
+        echo "Usage: $0 [-r | -s | -re]"
+        echo "  -r  : Start v2raya service"
+        echo "  -s  : Stop v2raya service"
+        echo "  -re : reStart v2raya service"
+        ;;
+esac
