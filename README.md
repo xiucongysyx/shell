@@ -7,3 +7,5 @@
 该shell脚本用来验证PA环境是否安装成功
 ## v2
 在使用v2raya时，github的ssh不能够使用，但是通过桌面关闭和开启v2太麻烦，通过该shell脚本简化这一过程。
+## 测试makedown链接功能
+[qq官网](qq.com)
