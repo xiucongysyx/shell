@@ -13,7 +13,7 @@ marco(){
 }
 polo(){
     if [ -n "$MARCO_DIR" ]; then #if的-n 是检查字符串 MARCO_DIR 是否为空的
-        cd $MARCO_DIR
+        cd "$MARCO_DIR"
     else
         echo "The MARCO_DIR is empty!"
     fi
