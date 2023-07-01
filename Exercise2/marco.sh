@@ -1,7 +1,7 @@
 #!/bin/bash
 #marco函数，将当前文件夹的目录保存到环境变量MARCO_DIR
 marco(){
-    if [ -z "$1" ] || [ "$1" = "-y" ]; then
+    if [ -z "$1" ] || [ "$1" = "-y" ]; then #当参数为空时，默认为-y
             export MARCO_DIR=$(pwd)  #参数为-y就保存目录
             echo "DIR has been saved"
     elif [ "$1" = "-n" ]; then 
