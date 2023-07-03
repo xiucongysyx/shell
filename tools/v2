@@ -1,16 +1,18 @@
 #!/bin/bash
 
+password=123456
+
 start_service() {
-   sudo systemctl start v2raya
+   echo $password | sudo systemctl start v2raya
 }
 
 
 stop_service() {
-   sudo systemctl stop v2raya
+   echo $password | sudo systemctl stop v2raya
 }
 
 restart_service() {
-   sudo systemctl restart v2raya
+   echo $password | sudo systemctl restart v2raya
 }
 
 case "$1" in

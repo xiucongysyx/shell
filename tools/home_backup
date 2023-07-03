@@ -1,0 +1,35 @@
+#!/bin/bash
+
+current_time=$(date +"%m%d%H%M")
+remotepath="/homebackup"
+password="123456"
+
+#备份的目录
+backup_dir="/backup"
+
+#名字
+backup_name="home$current_time.tar.gz"
+
+#被备份的目录
+backuped_dir="/home/xiucong/shell"
+
+
+str="$backup_dir/*"
+echo $password | sudo rm -rf $str
+
+echo “开始备份”
+
+start_timestamp=$(date +%s)
+
+echo $password | sudo tar -zcvf "$backup_dir/$backup_name" --exclude=/home/xiucong/Desktop/Xilinx "$backuped_dir"
+
+end_timestamp=$(date +%s)
+
+elapsed_time=$((($end_timestamp - $start_timestamp) / 60 ))
+
+bypy upload "$backup_dir/$backup_name" "$remotepath/"
+
+echo "备份已完成"
+echo "备份文件名: $backup_name"
+echo "备份使用时间: ${elapsed_time}min"
+echo "已上传到百度网盘: 我的应用程序/bypy/$remotepath"
