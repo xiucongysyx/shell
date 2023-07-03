@@ -11,7 +11,7 @@ backup_dir="/backup"
 backup_name="home$current_time.tar.gz"
 
 #被备份的目录
-backuped_dir="/home/xiucong/shell"
+backuped_dir="/home"
 
 
 str="$backup_dir/*"
